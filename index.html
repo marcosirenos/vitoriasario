@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,7 @@
             background: #ff00ff;
             font-family: 'Baloo Paaji 2', cursive;
         }
+
         /* Blinking Balloon Text */
         .center {
             position: absolute;
@@ -27,53 +29,88 @@
             animation: blink 0.1s infinite;
             z-index: 3;
         }
+
         #title {
             top: 45%;
         }
+
         #subtitle {
             top: 60%;
             font-size: 3em;
             animation: none;
         }
+
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.2; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.2;
+            }
         }
+
         /* Dancing Gifs and Images */
-        .gif, iframe {
+        .gif,
+        iframe {
             position: absolute;
             width: 150px;
             animation: spinAndFloat 6s infinite linear;
             z-index: 3;
         }
+
         @keyframes spinAndFloat {
-            0% { transform: translate(0,0) rotate(0deg); }
-            50% { transform: translate(20px,-20px) rotate(180deg); }
-            100% { transform: translate(0,0) rotate(360deg); }
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            50% {
+                transform: translate(20px, -20px) rotate(180deg);
+            }
+
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
         }
     </style>
 </head>
+
+<audio autoplay loop>
+    <source src="shadow-ourico.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio HTML5.
+</audio>
+
 <body>
     <!-- Ridiculous Balloon Text -->
     <div id="title" class="center">Feliz vicday</div>
     <div id="subtitle" class="center">CEO do autismo 😍</div>
 
     <!-- Original Dancing Gifs -->
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExazljNjFoeHF5M3M3MW1uMzFqZjMwNWFqZHoxbTVpZm1yeDZ5cmY0NiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/pRg4H37Bo0piw/giphy.gif" class="gif" style="top:10%; left:2%;">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExazljNjFoeHF5M3M3MW1uMzFqZjMwNWFqZHoxbTVpZm1yeDZ5cmY0NiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/pRg4H37Bo0piw/giphy.gif"
+        class="gif" style="top:10%; left:2%;">
     <!-- Sonic GIF -->
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3RpaDc3eTV2d2YxNjFnNzNkZWpuMDNzZXBoc3djeTdhNmVhaW1nbyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/HIIQJ0Y43ytrGzuP8U/giphy.gif" class="gif" style="top:10%; right:5%;">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3RpaDc3eTV2d2YxNjFnNzNkZWpuMDNzZXBoc3djeTdhNmVhaW1nbyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/HIIQJ0Y43ytrGzuP8U/giphy.gif"
+        class="gif" style="top:10%; right:5%;">
     <!-- Shadow GIF -->
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTg1ZjZxYmp3cXR5cmlqaDNseDZnaGthN2ZtdW5qcXo1eG9zMnNiYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/lVvSSZSIOeqUUqhWZm/giphy.gif" class="gif" style="top:60%; right:20%;">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTg1ZjZxYmp3cXR5cmlqaDNseDZnaGthN2ZtdW5qcXo1eG9zMnNiYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/lVvSSZSIOeqUUqhWZm/giphy.gif"
+        class="gif" style="top:60%; right:20%;">
     <!-- Omori GIF -->
     <img src="https://media.giphy.com/media/aTPT4krIPWgJW/giphy.gif" class="gif" style="bottom:50%; right:20%;">
     <!-- Ninja Turtles GIFs -->
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDMzZXplczF2cG13ZGh6Mzg1cWNhNjkzY295d242c2FleGZoZHlhaSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/d8FUrTFcEZrwYRsxIl/giphy.gif" class="gif" style="bottom:15%; left:1%;">
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExazljNjFoeHF5M3M3MW1uMzFqZjMwNWFqZHoxbTVpZm1yeDZ5cmY0NiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/PzbIKDFeivnqM/giphy.gif" class="gif" style="bottom:15%; left:10%;">
-    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmducmI5ZGpvOGlpbGtyOHNsbmdwZ3gwMzh6dmRuZmszMGpreXo4ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LqzU4AtEo8MAXausme/giphy.gif" class="gif" style="bottom:10%; right:10%;">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDMzZXplczF2cG13ZGh6Mzg1cWNhNjkzY295d242c2FleGZoZHlhaSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/d8FUrTFcEZrwYRsxIl/giphy.gif"
+        class="gif" style="bottom:15%; left:1%;">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExazljNjFoeHF5M3M3MW1uMzFqZjMwNWFqZHoxbTVpZm1yeDZ5cmY0NiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/PzbIKDFeivnqM/giphy.gif"
+        class="gif" style="bottom:15%; left:10%;">
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmducmI5ZGpvOGlpbGtyOHNsbmdwZ3gwMzh6dmRuZmszMGpreXo4ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LqzU4AtEo8MAXausme/giphy.gif"
+        class="gif" style="bottom:10%; right:10%;">
 
     <!-- Fear and Hunger Images -->
-    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngimg.com%2Fimage%2F104489&psig=AOvVaw2hfFLb6r7jTXCWHOc6-CYK&ust=1745184762818000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJjalYKG5YwDFQAAAAAdAAAAABAEg" class="gif" style="top:35%; left:35%; width:200px; animation-duration:8s;">
-    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2Fmemes%2Fcomments%2F8y64wz%2Fi_dont_know_where_to_post_this_but_i_made_a%2F&psig=AOvVaw2hfFLb6r7jTXCWHOc6-CYK&ust=1745184762818000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJjalYKG5YwDFQAAAAAdAAAAABAJ" class="gif" style="bottom:35%; right:35%; width:200px; animation-duration:8s;">
+    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngimg.com%2Fimage%2F104489&psig=AOvVaw2hfFLb6r7jTXCWHOc6-CYK&ust=1745184762818000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJjalYKG5YwDFQAAAAAdAAAAABAEg"
+        class="gif" style="top:35%; left:35%; width:200px; animation-duration:8s;">
+    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2Fmemes%2Fcomments%2F8y64wz%2Fi_dont_know_where_to_post_this_but_i_made_a%2F&psig=AOvVaw2hfFLb6r7jTXCWHOc6-CYK&ust=1745184762818000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJjalYKG5YwDFQAAAAAdAAAAABAJ"
+        class="gif" style="bottom:35%; right:35%; width:200px; animation-duration:8s;">
 
     <!-- Frantic Color-Changing Script and Confetti -->
     <script>
@@ -90,4 +127,5 @@
         };
     </script>
 </body>
+
 </html>
