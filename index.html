@@ -77,8 +77,8 @@
     </style>
 </head>
 
-    <audio id="background-music" src="https://vitoriasario.vercel.app/audio/shadow-ourico.mp3" autoplay loop muted></audio>
-    
+<audio id="background-music" src="/Assets/shadow-ourico.mp3" loop></audio>
+
 
 <body>
     <!-- Ridiculous Balloon Text -->
@@ -128,26 +128,28 @@
 
     <!-- Frantic Color-Changing Script and Confetti -->
     <script>
+        // 1) Dispara confetti imediatamente
+        confetti({ particleCount: 200, spread: 100, origin: { y: 0.6 } });
 
-        window.onload = () => {
-            const music = document.getElementById('background-music');
-            music.muted = false;
-            music.play().catch((e) => {
-                console.log('Autoplay bloqueado. Usuário precisa interagir.');
-            });
-
-            confetti({ particleCount: 200, spread: 100, origin: { y: 0.6 } });
-        };
-
+        // 2) Piscar cores do título e fundo
         const title = document.getElementById('title');
         function randomColor() {
-            return '#' + Math.floor(Math.random() * 16777215).toString(16).padEnd(6, '0');
+            return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
         }
         setInterval(() => {
             title.style.color = randomColor();
             document.body.style.background = randomColor();
         }, 100);
 
+        // 3) Tocar áudio no primeiro clique em qualquer lugar
+        function handleFirstClick() {
+            const music = document.getElementById('background-music');
+            music.play().then(() => {
+                console.log('🎵 Música iniciada após clique');
+            }).catch(e => console.error('Erro ao tocar áudio:', e));
+            document.removeEventListener('click', handleFirstClick);
+        }
+        document.addEventListener('click', handleFirstClick, { once: true });
     </script>
 </body>
 
