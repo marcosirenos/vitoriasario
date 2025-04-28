@@ -78,7 +78,7 @@
 </head>
 
 <audio autoplay loop>
-    <source src="shadow-ourico.mp3" type="audio/mpeg">
+    <audio id="background-music" src="/shadow-ourico.mp3" autoplay loop muted></audio>
     Seu navegador não suporta áudio HTML5.
 </audio>
 
@@ -105,6 +105,22 @@
         class="gif" style="bottom:15%; left:10%;">
     <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmducmI5ZGpvOGlpbGtyOHNsbmdwZ3gwMzh6dmRuZmszMGpreXo4ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LqzU4AtEo8MAXausme/giphy.gif"
         class="gif" style="bottom:10%; right:10%;">
+    <!-- novos gifs -->
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzJrdHFha3d6dzFwcGV4a3pzZHlxcG5mNXBhdTh1dmp5ZHIzeGY1dCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/5704UwWHJ7uRl4xeRh/giphy.gif"
+        class="gif" style="bottom:80%; right:15%;">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzJrdHFha3d6dzFwcGV4a3pzZHlxcG5mNXBhdTh1dmp5ZHIzeGY1dCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ZRUcenc6iO4CAVmO8i/giphy.gif"
+        class="gif" style="bottom:60%; right:50%;">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzJrdHFha3d6dzFwcGV4a3pzZHlxcG5mNXBhdTh1dmp5ZHIzeGY1dCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/K72cKlnwNPUHvXxoNt/giphy.gif"
+        class="gif" style="bottom:80%; right:35%;">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzJrdHFha3d6dzFwcGV4a3pzZHlxcG5mNXBhdTh1dmp5ZHIzeGY1dCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/7QtymUNiLVj2eDiHg4/giphy.gif"
+        class="gif" style="bottom:60%; right:70%;">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExajRndHMxem5sNHA5dTdwZTE2Zm43aXNkZ3hyemRsbHVtZWhhcTh0OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/oOodJn6hHMZAojqmie/giphy.gif"
+        class="gif" style="bottom:10%; right:70%; width: 110px;">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExajRndHMxem5sNHA5dTdwZTE2Zm43aXNkZ3hyemRsbHVtZWhhcTh0OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/1apIRVGEJhpyyAeRzk/giphy.gif"
+        class="gif" style="bottom:1%; right:50%; width: 120px;">
+
+    <img src="https://media.giphy.com/media/tDvT0cmp28PDyv22Q9/giphy.gif?cid=ecf05e47w34rw2h3mx0nxtjsjbp2lp462fmzj183zisayinn&ep=v1_gifs_search&rid=giphy.gif&ct=g"
+        class="gif" style="bottom:10%; right:10%;">
 
     <!-- Fear and Hunger Images -->
     <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngimg.com%2Fimage%2F104489&psig=AOvVaw2hfFLb6r7jTXCWHOc6-CYK&ust=1745184762818000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJjalYKG5YwDFQAAAAAdAAAAABAEg"
@@ -114,6 +130,18 @@
 
     <!-- Frantic Color-Changing Script and Confetti -->
     <script>
+
+        window.onload = () => {
+            const music = document.getElementById('background-music');
+            music.muted = false;
+            music.play().catch((e) => {
+                console.log('Autoplay bloqueado. Usuário precisa interagir.');
+            });
+
+            confetti({ particleCount: 200, spread: 100, origin: { y: 0.6 } });
+        };
+
+
         const title = document.getElementById('title');
         function randomColor() {
             return '#' + Math.floor(Math.random() * 16777215).toString(16).padEnd(6, '0');
